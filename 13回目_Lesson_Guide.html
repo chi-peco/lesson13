@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JLPT N5 Japanese Lesson Guide — 13回目</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #111111; --gray: #666666; --lgray: #999999;
+  --border: #cccccc; --red: #cc0000; --bg: #f5f5f5; --white: #ffffff;
+  --yellow: #fffde7; --try-bg: #f0f7ff; --try-border: #90b8d8;
+  --g1: #fdf2e2; --g2: #eaf4fb; --g3: #f4eafb; --g1-sub: #fef8ef;
+  --g1-border: #e67e22; --g2-border: #2980b9; --g3-border: #8e44ad;
+}
+body { font-family: Arial, sans-serif; font-size: 15px; color: var(--black); background: var(--bg); padding-bottom: 60px; line-height: 1.6; }
+nav { position: sticky; top: 0; background: var(--white); border-bottom: 2px solid var(--black); padding: 8px 20px; display: flex; flex-wrap: wrap; gap: 6px; z-index: 100; }
+nav a { font-size: 12px; color: var(--gray); text-decoration: none; padding: 3px 10px; border: 1px solid var(--border); border-radius: 3px; white-space: nowrap; }
+nav a:hover { background: var(--black); color: var(--white); }
+.page { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+.title-bar { background: var(--white); border-bottom: 3px solid var(--black); padding: 20px 20px 14px; }
+.title-bar h1 { font-size: 26px; font-weight: 900; }
+.title-bar h1 span { font-size: 18px; font-weight: 400; color: var(--gray); margin-left: 8px; }
+.title-bar .sub { font-size: 14px; color: var(--black); font-weight: 700; margin-top: 4px; }
+.title-bar .toc { font-size: 13px; color: var(--gray); margin-top: 4px; }
+.section { background: var(--white); border: 1px solid var(--border); border-radius: 4px; margin: 20px 0; overflow: hidden; }
+.section-header { border-top: 3px solid var(--black); border-bottom: 3px solid var(--black); padding: 10px 20px; font-size: 17px; font-weight: 700; }
+.section-header .ja { font-size: 13px; color: var(--gray); font-weight: 400; margin-left: 8px; }
+.section-body { padding: 20px; }
+h2 { font-size: 16px; font-weight: 700; margin: 18px 0 8px; }
+h2 .ja { font-size: 12px; color: var(--gray); font-weight: 400; margin-left: 6px; }
+h3 { font-size: 14px; font-weight: 700; color: var(--gray); margin: 14px 0 6px; }
+.logic-box { border: 1px solid var(--border); border-radius: 4px; padding: 14px 16px; margin: 12px 0; background: #fafafa; }
+.logic-box p { font-size: 14px; margin: 4px 0; }
+.logic-box .ja { color: var(--gray); font-size: 12px; margin: 2px 0 8px; }
+.structure { border: 1px solid var(--gray); font-family: monospace; font-size: 14px; padding: 10px 14px; margin: 10px 0; background: #fafafa; border-radius: 3px; }
+.structure div { margin: 2px 0; }
+.legend { font-size: 11px; color: var(--lgray); margin: -6px 0 10px 2px; font-style: italic; }
+.rule-box { background: #fafafa; border: 1px solid var(--border); border-radius: 3px; padding: 10px 14px; margin: 10px 0; font-size: 13px; }
+.rule-line { font-family: monospace; margin: 3px 0; font-size: 13px; }
+.rule-ex { font-size: 13px; color: #555; margin-top: 8px; }
+.check-pair { border: 3px solid var(--black); border-radius: 4px; padding: 12px 16px; margin: 10px 0; }
+.check-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: 6px 0; }
+.check-row + .check-row { margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; }
+.check-mark { font-size: 18px; font-weight: 700; flex-shrink: 0; }
+.check-mark.ok { color: var(--black); }
+.check-mark.ng { color: var(--red); }
+.check-text { font-family: monospace; font-size: 15px; }
+.check-text.ng { color: var(--red); }
+.check-reason { color: var(--gray); font-size: 13px; margin-top: 3px; margin-left: 28px; font-style: italic; display: block; width: 100%; }
+.example-box { border: 3px solid var(--black); border-radius: 4px; padding: 12px 16px; margin: 10px 0; }
+.example-label { font-weight: 700; font-size: 12px; letter-spacing: 1px; margin-bottom: 8px; }
+.example-line { font-family: monospace; font-size: 14px; margin: 3px 0; }
+.example-line.sub { color: var(--gray); }
+.example-line.en { color: var(--lgray); font-size: 12px; font-style: italic; font-family: Arial, sans-serif; }
+.note { border-left: 4px solid var(--black); padding: 10px 14px; margin: 14px 0; font-size: 13px; }
+.note-label { font-weight: 700; margin-bottom: 6px; }
+.note ul { padding-left: 16px; }
+.note li { margin: 4px 0; }
+.note .ja { color: var(--gray); font-size: 12px; }
+.summary-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.summary-table th, .summary-table td { border: 1px solid var(--border); padding: 7px 10px; vertical-align: top; }
+.summary-table th { font-weight: 700; background: #fafafa; }
+.step-box { margin: 12px 0; }
+.step-row { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; font-size: 14px; }
+.step-num { background: var(--black); color: var(--white); font-size: 12px; font-weight: 700; min-width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-content { flex: 1; }
+.step-content .ja { color: var(--gray); font-size: 12px; margin-top: 2px; }
+.try-box { background: var(--try-bg); border: 2px solid var(--try-border); border-radius: 4px; padding: 14px 16px; margin: 14px 0; }
+.try-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: var(--try-border); margin-bottom: 10px; }
+.try-prompt { font-size: 14px; margin: 6px 0; }
+.try-prompt .ja { color: var(--gray); font-size: 12px; }
+.try-blank { border-bottom: 2px solid #aaaaaa; display: inline-block; min-width: 160px; margin: 0 4px; height: 28px; vertical-align: bottom; }
+.try-line { font-family: monospace; font-size: 15px; margin: 8px 0 20px; padding-bottom: 32px; color: var(--lgray); }
+.transform { display: flex; align-items: center; gap: 6px; margin: 10px 0 4px; flex-wrap: wrap; line-height: 2.2; }
+.t-base { font-family: monospace; font-size: 17px; white-space: nowrap; }
+.t-del  { font-family: monospace; font-size: 17px; color: var(--red); text-decoration: line-through; white-space: nowrap; }
+.t-add  { font-family: monospace; font-size: 17px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; white-space: nowrap; }
+.t-plus  { font-size: 15px; color: var(--gray); }
+.t-arrow { font-size: 15px; color: var(--gray); }
+.t-roma  { font-size: 11px; color: var(--gray); display: block; margin: 0 0 8px; font-style: italic; }
+.use-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0 16px; }
+.use-table th, .use-table td { border: 1px solid var(--border); padding: 6px 10px; vertical-align: top; }
+.use-table th { background: #fafafa; font-weight: 700; }
+.use-table tr.today { background: var(--yellow); }
+.exception-box { border: 2px solid #e67e22; border-radius: 4px; padding: 12px 16px; margin: 10px 0; background: var(--yellow); font-size: 13px; }
+.exception-label { font-weight: 700; color: #e67e22; margin-bottom: 6px; }
+ruby rt { font-size: 10px; color: var(--lgray); }
+@media print {
+  nav { display: none !important; }
+  body { background: #fff; font-size: 13px; }
+  .page { max-width: 100%; padding: 0; }
+  .section { border: 1px solid #999; margin: 10px 0; page-break-inside: avoid; }
+  .check-text.ng { color: #000; text-decoration: line-through; }
+  .check-mark.ng { color: #000; }
+  a { color: #000; text-decoration: none; }
+  .try-box { background: #fff; border: 1px solid #555; }
+  .try-line { padding-bottom: 32px; margin-bottom: 20px; }
+  .try-blank { border-bottom: 2px solid #333; min-width: 160px; height: 28px; }
+}
+</style>
+</head>
+<body>
+
+<div class="title-bar">
+  <div class="page">
+    <h1>JLPT N5 <span>Japanese Lesson Guide</span></h1>
+    <div class="sub">13<ruby>回目<rt>かいめ</rt></ruby></div>
+    <div class="toc">
+      1. ⒶはⒷより〜です &nbsp;|&nbsp;
+      2. ⒶとⒷとどちらが〜ですか／…のほうが〜です &nbsp;|&nbsp;
+      3. 〜（の<ruby>中<rt>なか</rt></ruby>）で―がいちばん…です &nbsp;|&nbsp;
+      4. ⒶはⒷが〜です &nbsp;|&nbsp;
+      5. Ⓐは〜が、Ⓑは…
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="#s1">1. より（<ruby>比較<rt>ひかく</rt></ruby>）Comparison</a>
+  <a href="#s2">2. どちらが Which one</a>
+  <a href="#s3">3. いちばん The most</a>
+  <a href="#s4">4. ⒶはⒷが〜 Feature</a>
+  <a href="#s5">5. Ⓐは〜が、Ⓑは Contrast</a>
+  <a href="#summary">まとめ Summary</a>
+</nav>
+
+<div class="page">
+
+<!-- ══════════════════════════════════════════
+     SECTION 1: ⒶはⒷより〜です
+══════════════════════════════════════════ -->
+<div class="section" id="s1">
+  <div class="section-header">
+    1. ⒶはⒷより〜です
+    <span class="ja">Comparison — "Ⓐ is more ~ than Ⓑ"</span>
+  </div>
+  <div class="section-body">
+
+    <div class="logic-box">
+      <p>Use this to <strong>compare two things</strong> and say that Ⓐ is <em>more</em> ~ than Ⓑ.</p>
+      <p>Put「より」after the thing you are comparing against (Ⓑ).</p>
+      <div class="ja"><ruby>二<rt>ふた</rt></ruby>つのものを<ruby>比較<rt>ひかく</rt></ruby>して、ⒶがⒷより<ruby>程度<rt>ていど</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いことを<ruby>表<rt>あらわ</rt></ruby>す。「より」はⒷの<ruby>後<rt>あと</rt></ruby>につける。(Compare two things; Ⓐ is more ~ than Ⓑ. Put より after Ⓑ.)</div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-content">Name Ⓐ (the topic) + は.
+          <div class="ja">→ Ⓐ（<ruby>話題<rt>わだい</rt></ruby>）＋は。(State the topic with は.)</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-content">Name Ⓑ (the thing you compare against) + より.
+          <div class="ja">→ Ⓑ（<ruby>比較<rt>ひかく</rt></ruby>する<ruby>対象<rt>たいしょう</rt></ruby>）＋より。(Add より after Ⓑ.)</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-content">Add an adjective + です／Na-adjective な→です.
+          <div class="ja">→ <ruby>形容詞<rt>けいようし</rt></ruby>＋です。(End with an adjective + です.)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="structure">
+      <div>N₁[Ⓐ] ＋ は ＋ N₂[Ⓑ] ＋ より ＋ Aい ＋ です</div>
+      <div>N₁[Ⓐ] ＋ は ＋ N₂[Ⓑ] ＋ より ＋ Na <span style="color:var(--red)">な→</span>です</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　A = i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）　Na = na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</div>
+
+    <div class="rule-box">
+      <div class="rule-line"><strong>Before より →</strong> Noun (Ⓑ, the thing you compare against). <ruby>例<rt>れい</rt></ruby>: あのかばん（that bag）・こうちゃ（green tea）</div>
+      <div class="rule-line"><strong>After より →</strong> i-adjective or na-adjective + です. <ruby>例<rt>れい</rt></ruby>: <ruby>高<rt>たか</rt></ruby>いです（expensive）・<ruby>好<rt>す</rt></ruby>きです（like）</div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-label">例 EXAMPLE</div>
+      <div class="example-line">この かばんは　あの かばん<strong>より</strong>　<ruby>高<rt>たか</rt></ruby>いです。</div>
+      <div class="example-line en">This bag is more expensive than that bag.</div>
+      <div class="example-line" style="height:8px;"></div>
+      <div class="example-line"><ruby>日本<rt>にほん</rt></ruby>は カナダ<strong>より</strong> <ruby>小<rt>ちい</rt></ruby>さいです。</div>
+      <div class="example-line en">Japan is smaller than Canada.</div>
+      <div class="example-line" style="height:8px;"></div>
+      <div class="example-line">バスより でんしゃのほうが <ruby>便利<rt>べんり</rt></ruby>です。</div>
+      <div class="example-line en">The train is more convenient than the bus.</div>
+    </div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">この かばんは あの かばん<strong>より</strong> <ruby>高<rt>たか</rt></ruby>いです。</span>
+        <span class="check-reason">Ⓑ + より + adjective — correct order.
+          <br>→ Ⓑ＋より＋<ruby>形容詞<rt>けいようし</rt></ruby>の<ruby>順番<rt>じゅんばん</rt></ruby>。<ruby>正しい<rt>ただしい</rt></ruby>。(Correct word order.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">この かばんは <ruby>高<rt>たか</rt></ruby>いです より あの かばん。</span>
+        <span class="check-reason">より must come right after Ⓑ, not after the adjective.
+          <br>→「より」はⒷの<ruby>直後<rt>ちょくご</rt></ruby>につける。<ruby>形容詞<rt>けいようし</rt></ruby>の<ruby>後<rt>あと</rt></ruby>ではない。(より goes right after Ⓑ.)</span>
+      </div>
+    </div>
+
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Compare two things using より.
+        <div class="ja">→「より」を<ruby>使<rt>つか</rt></ruby>って<ruby>二<rt>ふた</rt></ruby>つのものを<ruby>比較<rt>ひかく</rt></ruby>する<ruby>文<rt>ぶん</rt></ruby>を<ruby>書<rt>か</rt></ruby>きましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿は　＿＿＿＿＿＿より　＿＿＿＿＿＿です。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 2: ⒶとⒷとどちらが〜ですか／…のほうが〜です
+══════════════════════════════════════════ -->
+<div class="section" id="s2">
+  <div class="section-header">
+    2. ⒶとⒷとどちらが〜ですか／…のほうが〜です
+    <span class="ja">Which one? — asking &amp; answering about two things</span>
+  </div>
+  <div class="section-body">
+
+    <div class="logic-box">
+      <p>Use this to ask <strong>which of two things is more ~</strong>.</p>
+      <p>「どちら」means "which one (of two)".</p>
+      <p>When answering, say「…のほうが〜です」— this means "… is more ~".</p>
+      <div class="ja"><ruby>二<rt>ふた</rt></ruby>つのものを<ruby>比較<rt>ひかく</rt></ruby>して、どちらが<ruby>程度<rt>ていど</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いか<ruby>質問<rt>しつもん</rt></ruby>する。<ruby>答<rt>こた</rt></ruby>えるときは「…のほうが〜です」を<ruby>使<rt>つか</rt></ruby>う。(Ask which of two is more ~; answer with のほうが〜です.)</div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-content">Question: N₁ + と + N₂ + と + どちらが + adjective + ですか。
+          <div class="ja">→ Q: N₁とN₂とどちらが＋<ruby>形容詞<rt>けいようし</rt></ruby>＋ですか。(<ruby>質問<rt>しつもん</rt></ruby>の<ruby>形<rt>かたち</rt></ruby>。)</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-content">Answer: N (your choice) + のほうが + adjective + です。
+          <div class="ja">→ A: N＋のほうが＋<ruby>形容詞<rt>けいようし</rt></ruby>＋です。(<ruby>答<rt>こた</rt></ruby>えの<ruby>形<rt>かたち</rt></ruby>。)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="structure">
+      <div><strong>Q：</strong> N₁[Ⓐ] ＋ と ＋ N₂[Ⓑ] ＋ と ＋ どちらが ＋ Aい ＋ ですか</div>
+      <div style="margin-left:48px;">N₁[Ⓐ] ＋ と ＋ N₂[Ⓑ] ＋ と ＋ どちらが ＋ Na <span style="color:var(--red)">な→</span>ですか</div>
+      <div style="margin-top:6px;"><strong>A：</strong> N ＋ のほうが ＋ Aい ＋ です</div>
+      <div style="margin-left:48px;">N ＋ のほうが ＋ Na <span style="color:var(--red)">な→</span>です</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　A = i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）　Na = na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</div>
+
+    <div class="example-box">
+      <div class="example-label">例 EXAMPLE</div>
+      <div class="example-line"><ruby>田中<rt>たなか</rt></ruby>：「コーヒーと こうちゃと <strong>どちらが</strong> <ruby>好<rt>す</rt></ruby>きですか。」</div>
+      <div class="example-line">アン：「コーヒー<strong>のほうが</strong> <ruby>好<rt>す</rt></ruby>きです。」</div>
+      <div class="example-line en">Tanaka: "Which do you like more, coffee or green tea?"</div>
+      <div class="example-line en">An: "I like coffee more."</div>
+      <div class="example-line" style="height:8px;"></div>
+      <div class="example-line">A：「サッカーと やきゅうと どちらが <ruby>好<rt>す</rt></ruby>きですか。」</div>
+      <div class="example-line">B：「サッカーのほうが <ruby>好<rt>す</rt></ruby>きです。」</div>
+      <div class="example-line en">A: "Which do you like more, soccer or baseball?"</div>
+      <div class="example-line en">B: "I like soccer more."</div>
+    </div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">コーヒーと こうちゃと <strong>どちらが</strong> <ruby>好<rt>す</rt></ruby>きですか。</span>
+        <span class="check-reason">Both options + と + と + どちらが — correct question pattern.
+          <br>→ N₁とN₂と＋どちらが — <ruby>正しい<rt>ただしい</rt></ruby><ruby>質問<rt>しつもん</rt></ruby>のパターン。(Correct question form.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">コーヒーと こうちゃと <ruby>何<rt>なに</rt></ruby>が <ruby>好<rt>す</rt></ruby>きですか。</span>
+        <span class="check-reason">Use どちら (which of two), not 何 (what), when comparing exactly two things.
+          <br>→ <ruby>二<rt>ふた</rt></ruby>つから<ruby>選<rt>えら</rt></ruby>ぶときは「どちら」を<ruby>使<rt>つか</rt></ruby>う。「<ruby>何<rt>なに</rt></ruby>」ではない。(Use どちら for two choices.)</span>
+      </div>
+    </div>
+
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Ask your partner which they like more, then write the answer.
+        <div class="ja">→ パートナーにどちらが<ruby>好<rt>す</rt></ruby>きか<ruby>聞<rt>き</rt></ruby>いて、<ruby>答<rt>こた</rt></ruby>えを<ruby>書<rt>か</rt></ruby>きましょう。</div>
+      </div>
+      <div class="try-line">Q: ＿＿＿＿＿＿と ＿＿＿＿＿＿と どちらが ＿＿＿＿＿＿ですか。</div>
+      <div class="try-line">A: ＿＿＿＿＿＿のほうが ＿＿＿＿＿＿です。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 3: 〜（の中）で―がいちばん…です
+══════════════════════════════════════════ -->
+<div class="section" id="s3">
+  <div class="section-header">
+    3. 〜（の<ruby>中<rt>なか</rt></ruby>）で―がいちばん…ですか／Ⓐがいちばん…です
+    <span class="ja">Superlative — "the most ~"</span>
+  </div>
+  <div class="section-body">
+
+    <div class="logic-box">
+      <p>Use this to ask <strong>which is the most ~</strong> among three or more things.</p>
+      <p>「いちばん」means "the most" or "number one".</p>
+      <p>「〜の<ruby>中<rt>なか</rt></ruby>で」means "among ~" — it shows the group you are comparing.</p>
+      <p>When answering, say「Ⓐがいちばん…です」or just「Ⓐです」.</p>
+      <div class="ja"><ruby>三<rt>みっ</rt></ruby>つ<ruby>以上<rt>いじょう</rt></ruby>の<ruby>中<rt>なか</rt></ruby>でもっとも<ruby>程度<rt>ていど</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いものを<ruby>質問<rt>しつもん</rt></ruby>する。「いちばん」は「the most / <ruby>一番<rt>いちばん</rt></ruby>」の<ruby>意味<rt>いみ</rt></ruby>。(Ask which is the most ~ among a group; いちばん means the most.)</div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-content">Show the group with N（+の<ruby>中<rt>なか</rt></ruby>）+ で.
+          <div class="ja">→ <ruby>比較<rt>ひかく</rt></ruby>の<ruby>範囲<rt>はんい</rt></ruby>（グループ）＋「（の<ruby>中<rt>なか</rt></ruby>）で」。(Show the group with 〜の中で.)</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-content">Question: question word（<ruby>何<rt>なに</rt></ruby>・だれ・どこ）+ が + いちばん + adjective + ですか。
+          <div class="ja">→ Q: <ruby>疑問詞<rt>ぎもんし</rt></ruby>＋が＋いちばん＋<ruby>形容詞<rt>けいようし</rt></ruby>＋ですか。(Question with a question word.)</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-content">Answer: N[Ⓐ] + がいちばん + adjective + です.（or just「Ⓐです」）
+          <div class="ja">→ A: N[Ⓐ]＋がいちばん＋<ruby>形容詞<rt>けいようし</rt></ruby>＋です。（または「Ⓐです」）(Answer with Ⓐ + がいちばん.)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="structure">
+      <div><strong>Q：</strong> N₁（＋の<ruby>中<rt>なか</rt></ruby>）＋ で ＋ N₂[<ruby>疑問詞<rt>ぎもんし</rt></ruby>] ＋ がいちばん ＋ Aい ＋ ですか</div>
+      <div style="margin-left:48px;">N₁（＋の<ruby>中<rt>なか</rt></ruby>）＋ で ＋ N₂[<ruby>疑問詞<rt>ぎもんし</rt></ruby>] ＋ がいちばん ＋ Na <span style="color:var(--red)">な→</span>ですか</div>
+      <div style="margin-top:6px;"><strong>A：</strong> N[Ⓐ] です。／ N[Ⓐ] ＋ がいちばん ＋ Aい ＋ です</div>
+      <div style="margin-left:48px;">N[Ⓐ] ＋ がいちばん ＋ Na <span style="color:var(--red)">な→</span>です</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　A = i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）　Na = na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）　<ruby>疑問詞<rt>ぎもんし</rt></ruby> = question word（<ruby>何<rt>なに</rt></ruby>・だれ・どこ）</div>
+
+    <div class="note">
+      <div class="note-label">📝 Note</div>
+      <p>「<ruby>疑問詞<rt>ぎもんし</rt></ruby>」= question word — e.g. <ruby>何<rt>なに</rt></ruby>（what）、だれ（who）、どこ（where）</p>
+      <div class="ja"><ruby>疑問詞<rt>ぎもんし</rt></ruby>は「<ruby>何<rt>なに</rt></ruby>」「だれ」「どこ」などのこと。(Question words: 何, だれ, どこ, etc.)</div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-label">例 EXAMPLE</div>
+      <div class="example-line"><ruby>山田<rt>やまだ</rt></ruby>：「くだものの<ruby>中<rt>なか</rt></ruby>で　<ruby>何<rt>なに</rt></ruby>が　<strong>いちばん</strong>　<ruby>好<rt>す</rt></ruby>きですか。」</div>
+      <div class="example-line">リー：「いちごが　<strong>いちばん</strong>　<ruby>好<rt>す</rt></ruby>きです。」</div>
+      <div class="example-line en">Yamada: "Among fruits, which do you like the most?"</div>
+      <div class="example-line en">Lee: "I like strawberries the most."</div>
+      <div class="example-line" style="height:8px;"></div>
+      <div class="example-line"><ruby>日本<rt>にほん</rt></ruby>で どこが いちばん <ruby>有名<rt>ゆうめい</rt></ruby>ですか。</div>
+      <div class="example-line en">Where in Japan is the most famous?</div>
+      <div class="example-line"><ruby>京都<rt>きょうと</rt></ruby>がいちばん <ruby>有名<rt>ゆうめい</rt></ruby>です。</div>
+      <div class="example-line en">Kyoto is the most famous.</div>
+    </div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">くだものの<ruby>中<rt>なか</rt></ruby>で　<ruby>何<rt>なに</rt></ruby>が　<strong>いちばん</strong>　<ruby>好<rt>す</rt></ruby>きですか。</span>
+        <span class="check-reason">Group + で + question word + がいちばん — correct superlative question.
+          <br>→ グループ＋で＋<ruby>疑問詞<rt>ぎもんし</rt></ruby>＋がいちばん — <ruby>正しい<rt>ただしい</rt></ruby><ruby>最上級<rt>さいじょうきゅう</rt></ruby>の<ruby>質問<rt>しつもん</rt></ruby>。(Correct superlative question.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">くだものの<ruby>中<rt>なか</rt></ruby>で　<ruby>何<rt>なに</rt></ruby>が　<ruby>好<rt>す</rt></ruby>きですか。</span>
+        <span class="check-reason">Without いちばん, this just means "which fruit do you like?" — not the superlative.
+          <br>→「いちばん」がないと<ruby>最上級<rt>さいじょうきゅう</rt></ruby>にならない。(Missing いちばん; not superlative.)</span>
+      </div>
+    </div>
+
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Ask which is the most ~ in a group, then answer.
+        <div class="ja">→ グループの<ruby>中<rt>なか</rt></ruby>でいちばん〜を<ruby>聞<rt>き</rt></ruby>いて、<ruby>答<rt>こた</rt></ruby>えを<ruby>書<rt>か</rt></ruby>きましょう。</div>
+      </div>
+      <div class="try-line">Q: ＿＿＿＿＿＿の<ruby>中<rt>なか</rt></ruby>で　＿＿＿＿＿＿が　いちばん　＿＿＿＿＿＿ですか。</div>
+      <div class="try-line">A: ＿＿＿＿＿＿が　いちばん　＿＿＿＿＿＿です。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 4: ⒶはⒷが〜です
+══════════════════════════════════════════ -->
+<div class="section" id="s4">
+  <div class="section-header">
+    4. ⒶはⒷが〜です
+    <span class="ja">Describing features — "Ⓐ has ~ / Ⓐ's ~ is …"</span>
+  </div>
+  <div class="section-body">
+
+    <p style="font-size:14px; margin-bottom:10px;">「が」has several uses. Today you will learn use ④.
+      <br><span style="color:var(--gray); font-size:12px;">→「が」には<ruby>複数<rt>ふくすう</rt></ruby>の<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>があります。今日は④だけ<ruby>学<rt>まな</rt></ruby>びます。</span>
+    </p>
+
+    <table class="use-table">
+      <thead>
+        <tr><th>#</th><th>Use <ruby>用法<rt>ようほう</rt></ruby></th><th>Lesson <ruby>回<rt>かい</rt></ruby></th><th>Example <ruby>例<rt>れい</rt></ruby></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>①</td>
+          <td>Subject marker<br><span style="color:var(--lgray);font-size:11px;"><ruby>主語<rt>しゅご</rt></ruby>マーカー</span></td>
+          <td>L8</td>
+          <td>だれ<strong>が</strong> きますか。<br><span style="color:var(--lgray);font-size:11px;">Who is coming?</span></td>
+        </tr>
+        <tr>
+          <td>②</td>
+          <td>Object of feeling<br><span style="color:var(--lgray);font-size:11px;"><ruby>感情<rt>かんじょう</rt></ruby>の<ruby>対象<rt>たいしょう</rt></ruby></span></td>
+          <td>L7</td>
+          <td>コーヒー<strong>が</strong> <ruby>好<rt>す</rt></ruby>きです。<br><span style="color:var(--lgray);font-size:11px;">I like coffee.</span></td>
+        </tr>
+        <tr>
+          <td>③</td>
+          <td>Contrast (but)<br><span style="color:var(--lgray);font-size:11px;"><ruby>逆接<rt>ぎゃくせつ</rt></ruby></span></td>
+          <td>L11</td>
+          <td>おいしいです<strong>が</strong>、<ruby>高<rt>たか</rt></ruby>いです。<br><span style="color:var(--lgray);font-size:11px;">It's delicious, but expensive.</span></td>
+        </tr>
+        <tr class="today">
+          <td>④ ★</td>
+          <td>Feature / characteristic<br><span style="color:var(--lgray);font-size:11px;"><ruby>特徴<rt>とくちょう</rt></ruby></span></td>
+          <td><strong>L13 ← <ruby>今日<rt>きょう</rt></ruby></strong></td>
+          <td><ruby>川口<rt>かわぐち</rt></ruby>さんは かみ<strong>が</strong> <ruby>長<rt>なが</rt></ruby>いです。<br><span style="color:var(--lgray);font-size:11px;">Kawaguchi-san has long hair.</span></td>
+        </tr>
+        <tr>
+          <td>⑤</td>
+          <td>Description<br><span style="color:var(--lgray);font-size:11px;"><ruby>描写<rt>びょうしゃ</rt></ruby></span></td>
+          <td>L17</td>
+          <td>そとは ゆきが ふっています。<br><span style="color:var(--lgray);font-size:11px;">Outside, snow is falling.</span></td>
+        </tr>
+        <tr>
+          <td>⑥</td>
+          <td>Subject in a sub-sentence<br><span style="color:var(--lgray);font-size:11px;"><ruby>従属節<rt>じゅうぞくせつ</rt></ruby>の<ruby>主語<rt>しゅご</rt></ruby></span></td>
+          <td>L20</td>
+          <td>わたし<strong>が</strong> つくった りょうり。<br><span style="color:var(--lgray);font-size:11px;">The food that I made.</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="logic-box">
+      <p>Use this to <strong>describe a feature or characteristic</strong> of a person or thing (Ⓐ).</p>
+      <p>Ⓑ is a <em>part of</em> Ⓐ, or something that <em>belongs to</em> Ⓐ.</p>
+      <div class="ja"><ruby>人<rt>ひと</rt></ruby>や<ruby>物<rt>もの</rt></ruby>の<ruby>特徴<rt>とくちょう</rt></ruby>を<ruby>表<rt>あらわ</rt></ruby>す。ⒷはⒶの<ruby>一部分<rt>いちぶぶん</rt></ruby>やⒶに<ruby>属<rt>ぞく</rt></ruby>するものを<ruby>指<rt>さ</rt></ruby>す。(Describe a feature. Ⓑ is a part of or belongs to Ⓐ.)</div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-content">Name Ⓐ (the topic) + は.
+          <div class="ja">→ Ⓐ（<ruby>話題<rt>わだい</rt></ruby>）＋は。(State the topic with は.)</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-content">Name Ⓑ (a part or feature of Ⓐ) + が.
+          <div class="ja">→ Ⓑ（Ⓐの<ruby>一部<rt>いちぶ</rt></ruby>や<ruby>特徴<rt>とくちょう</rt></ruby>）＋が。(Use が for the feature/part.)</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-content">Add an adjective + です.
+          <div class="ja">→ <ruby>形容詞<rt>けいようし</rt></ruby>＋です。(Describe the feature with an adjective.)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="structure">
+      <div>N₁[Ⓐ] ＋ は ＋ N₂[Ⓑ] ＋ が ＋ Aい ＋ です</div>
+      <div>N₁[Ⓐ] ＋ は ＋ N₂[Ⓑ] ＋ が ＋ Na <span style="color:var(--red)">な→</span>です</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　A = i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）　Na = na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</div>
+
+    <div class="rule-box">
+      <div class="rule-line"><strong>Before が →</strong> Noun (Ⓑ, a part or feature of Ⓐ). <ruby>例<rt>れい</rt></ruby>: かみ（hair）・<ruby>目<rt>め</rt></ruby>（eyes）・<ruby>足<rt>あし</rt></ruby>（legs）</div>
+      <div class="rule-line"><strong>After が →</strong> adjective + です. <ruby>例<rt>れい</rt></ruby>: <ruby>長<rt>なが</rt></ruby>いです（long）・きれいです（pretty）</div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-label">例 EXAMPLE</div>
+      <div class="example-line"><ruby>川口<rt>かわぐち</rt></ruby>さんは　かみ<strong>が</strong>　<ruby>長<rt>なが</rt></ruby>いです。</div>
+      <div class="example-line en">Kawaguchi-san has long hair. (Literally: As for Kawaguchi-san, her hair is long.)</div>
+      <div class="example-line" style="height:8px;"></div>
+      <div class="example-line"><ruby>山田<rt>やまだ</rt></ruby>さんは　<ruby>目<rt>め</rt></ruby><strong>が</strong>　<ruby>大<rt>おお</rt></ruby>きいです。</div>
+      <div class="example-line en">Yamada-san has big eyes. (Literally: As for Yamada-san, their eyes are big.)</div>
+      <div class="example-line" style="height:8px;"></div>
+      <div class="example-line">このレストランは　りょうり<strong>が</strong>　おいしいです。</div>
+      <div class="example-line en">This restaurant has delicious food. (Literally: As for this restaurant, the food is delicious.)</div>
+    </div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text"><ruby>川口<rt>かわぐち</rt></ruby>さんは　かみ<strong>が</strong>　<ruby>長<rt>なが</rt></ruby>いです。</span>
+        <span class="check-reason">は marks Ⓐ (the topic); が marks Ⓑ (the feature that belongs to Ⓐ).
+          <br>→ は＝<ruby>話題<rt>わだい</rt></ruby>（Ⓐ）、が＝<ruby>特徴<rt>とくちょう</rt></ruby>（Ⓑ）。<ruby>正しい<rt>ただしい</rt></ruby>。(は for topic, が for feature.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng"><ruby>川口<rt>かわぐち</rt></ruby>さんは　かみ<strong>は</strong>　<ruby>長<rt>なが</rt></ruby>いです。</span>
+        <span class="check-reason">When Ⓑ is a feature/part of Ⓐ, use が, not は — は would suggest contrast.
+          <br>→ Ⓑが<ruby>特徴<rt>とくちょう</rt></ruby>の<ruby>場合<rt>ばあい</rt></ruby>は「が」を<ruby>使<rt>つか</rt></ruby>う。「は」では<ruby>対比<rt>たいひ</rt></ruby>になってしまう。(Use が, not は, for the feature part.)</span>
+      </div>
+    </div>
+
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Describe a person's feature using ⒶはⒷが〜です.
+        <div class="ja">→「ⒶはⒷが〜です」を<ruby>使<rt>つか</rt></ruby>って、<ruby>人<rt>ひと</rt></ruby>の<ruby>特徴<rt>とくちょう</rt></ruby>を<ruby>説明<rt>せつめい</rt></ruby>しましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿さんは　＿＿＿＿＿＿が　＿＿＿＿＿＿です。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 5: Ⓐは〜が、Ⓑは…
+══════════════════════════════════════════ -->
+<div class="section" id="s5">
+  <div class="section-header">
+    5. Ⓐは〜が、Ⓑは…
+    <span class="ja">Contrast — "Ⓐ ~, but Ⓑ …"</span>
+  </div>
+  <div class="section-body">
+
+    <div class="logic-box">
+      <p>Use this to <strong>contrast two things</strong> (Ⓐ and Ⓑ).</p>
+      <p>「は」marks what is being contrasted in each part.</p>
+      <p>The first sentence uses polite form + 「が」to connect to the second sentence.</p>
+      <div class="ja"><ruby>二<rt>ふた</rt></ruby>つのものを<ruby>対比<rt>たいひ</rt></ruby>する。「は」で<ruby>対比<rt>たいひ</rt></ruby>するものを<ruby>表<rt>あらわ</rt></ruby>す。<ruby>最初<rt>さいしょ</rt></ruby>の<ruby>文<rt>ぶん</rt></ruby>は[ていねい<ruby>形<rt>けい</rt></ruby>]＋「が」でつなぐ。(Contrast two things with は; connect sentences with が.)</div>
+    </div>
+
+    <div class="note">
+      <div class="note-label">📝 Note — this「が」is contrast (③)</div>
+      <p>The「が」here connects two sentences and means "but". This is the same が③ (contrast / <ruby>逆接<rt>ぎゃくせつ</rt></ruby>) from Lesson 11.</p>
+      <p>It is <strong>different</strong> from が④ (feature) in Section 4.</p>
+      <div class="ja">ここの「が」は<ruby>逆接<rt>ぎゃくせつ</rt></ruby>（③）で、L11で<ruby>学<rt>まな</rt></ruby>んだ「が」と<ruby>同<rt>おな</rt></ruby>じ。<ruby>Section<rt>セクション</rt></ruby>4の<ruby>特徴<rt>とくちょう</rt></ruby>の「が」（④）とは<ruby>別<rt>べつ</rt></ruby>。(This が means "but" — contrast, learned in L11.)</div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-content">State Ⓐ + は + polite form sentence + が.
+          <div class="ja">→ Ⓐ＋は＋[ていねい<ruby>形<rt>けい</rt></ruby>]＋が。(<ruby>最初<rt>さいしょ</rt></ruby>の<ruby>文<rt>ぶん</rt></ruby>。)</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-content">State Ⓑ + は + polite form sentence.
+          <div class="ja">→ Ⓑ＋は＋[ていねい<ruby>形<rt>けい</rt></ruby>]。(<ruby>二番目<rt>にばんめ</rt></ruby>の<ruby>文<rt>ぶん</rt></ruby>。)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="structure">
+      <div>N₁[Ⓐ] ＋ は ＋ [ていねい<ruby>形<rt>けい</rt></ruby>] ＋ <strong>が</strong>、N₂[Ⓑ] ＋ は ＋ [ていねい<ruby>形<rt>けい</rt></ruby>]</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　ていねい<ruby>形<rt>けい</rt></ruby> = polite form（e.g. です／ます／ません／でした）</div>
+
+    <div class="rule-box">
+      <div class="rule-line"><strong>Before が（contrast）→</strong> polite-form sentence (Ⓐ). <ruby>例<rt>れい</rt></ruby>: <ruby>飲<rt>の</rt></ruby>みます・おいしいです</div>
+      <div class="rule-line"><strong>After が（contrast）→</strong> another sentence (Ⓑ) — usually the opposite or different fact. <ruby>例<rt>れい</rt></ruby>: <ruby>飲<rt>の</rt></ruby>みません・<ruby>高<rt>たか</rt></ruby>いです</div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-label">例 EXAMPLE</div>
+      <div class="example-line">おちゃ<strong>は</strong>　<ruby>飲<rt>の</rt></ruby>ます<strong>が</strong>、コーヒー<strong>は</strong>　<ruby>飲<rt>の</rt></ruby>みません。</div>
+      <div class="example-line en">I drink tea, but I don't drink coffee.</div>
+      <div class="example-line" style="height:8px;"></div>
+      <div class="example-line">この かばん<strong>は</strong>　<ruby>安<rt>やす</rt></ruby>いです<strong>が</strong>、あの かばん<strong>は</strong>　<ruby>高<rt>たか</rt></ruby>いです。</div>
+      <div class="example-line en">This bag is cheap, but that bag is expensive.</div>
+      <div class="example-line" style="height:8px;"></div>
+      <div class="example-line"><ruby>夏<rt>なつ</rt></ruby><strong>は</strong>　あついです<strong>が</strong>、<ruby>冬<rt>ふゆ</rt></ruby><strong>は</strong>　さむいです。</div>
+      <div class="example-line en">Summer is hot, but winter is cold.</div>
+    </div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">おちゃ<strong>は</strong> <ruby>飲<rt>の</rt></ruby>みます<strong>が</strong>、コーヒー<strong>は</strong> <ruby>飲<rt>の</rt></ruby>みません。</span>
+        <span class="check-reason">は marks each contrasted item; が (contrast) connects the two sentences.
+          <br>→ は＝<ruby>対比<rt>たいひ</rt></ruby>のマーカー、が＝<ruby>逆接<rt>ぎゃくせつ</rt></ruby>のつなぎ。<ruby>正しい<rt>ただしい</rt></ruby>。(Correct contrast pattern.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">おちゃ<strong>を</strong> <ruby>飲<rt>の</rt></ruby>みます<strong>が</strong>、コーヒー<strong>を</strong> <ruby>飲<rt>の</rt></ruby>みません。</span>
+        <span class="check-reason">Use は (not を) to mark the contrasted items — は shows contrast, を is just the object marker.
+          <br>→ <ruby>対比<rt>たいひ</rt></ruby>を<ruby>表<rt>あらわ</rt></ruby>すときは「を」ではなく「は」を<ruby>使<rt>つか</rt></ruby>う。(Use は, not を, for contrast.)</span>
+      </div>
+    </div>
+
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Contrast two things using Ⓐは〜が、Ⓑは….
+        <div class="ja">→「Ⓐは〜が、Ⓑは…」を<ruby>使<rt>つか</rt></ruby>って<ruby>対比<rt>たいひ</rt></ruby>の<ruby>文<rt>ぶん</rt></ruby>を<ruby>書<rt>か</rt></ruby>きましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿は　＿＿＿＿＿＿ますが、＿＿＿＿＿＿は　＿＿＿＿＿＿ません。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SUMMARY
+══════════════════════════════════════════ -->
+<div class="section" id="summary">
+  <div class="section-body">
+    <h2>まとめ <span class="ja">Summary — 13<ruby>回目<rt>かいめ</rt></ruby></span></h2>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Pattern パターン</th>
+          <th>Structure <ruby>構造<rt>こうぞう</rt></ruby></th>
+          <th>Example <ruby>例<rt>れい</rt></ruby></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ⒶはⒷより〜です<br><span style="color:var(--lgray);font-size:11px;">Ⓐ is more ~ than Ⓑ</span></td>
+          <td style="font-family:monospace; font-size:12px;">N₁[Ⓐ] は N₂[Ⓑ] より A/Na です</td>
+          <td>この かばんは あの かばんより <ruby>高<rt>たか</rt></ruby>いです。<br><span style="color:var(--lgray);font-size:11px;">This bag is more expensive than that bag.</span></td>
+        </tr>
+        <tr>
+          <td>どちらが〜ですか<br>…のほうが〜です<br><span style="color:var(--lgray);font-size:11px;">Which is more ~? / … is more ~</span></td>
+          <td style="font-family:monospace; font-size:12px;">Q: N₁ と N₂ と どちらが A/Na ですか<br>A: N のほうが A/Na です</td>
+          <td>コーヒーと こうちゃと どちらが <ruby>好<rt>す</rt></ruby>きですか。<br>コーヒーのほうが <ruby>好<rt>す</rt></ruby>きです。<br><span style="color:var(--lgray);font-size:11px;">Which do you like more? / I like coffee more.</span></td>
+        </tr>
+        <tr>
+          <td>〜（の<ruby>中<rt>なか</rt></ruby>）でいちばん…です<br><span style="color:var(--lgray);font-size:11px;">~ is the most … among …</span></td>
+          <td style="font-family:monospace; font-size:12px;">Q: N（の<ruby>中<rt>なか</rt></ruby>）で 疑問詞 がいちばん A/Na ですか<br>A: N がいちばん A/Na です</td>
+          <td>くだものの<ruby>中<rt>なか</rt></ruby>で <ruby>何<rt>なに</rt></ruby>が いちばん <ruby>好<rt>す</rt></ruby>きですか。<br>いちごが いちばん <ruby>好<rt>す</rt></ruby>きです。<br><span style="color:var(--lgray);font-size:11px;">Which fruit do you like the most? / I like strawberries the most.</span></td>
+        </tr>
+        <tr>
+          <td>ⒶはⒷが〜です<br><span style="color:var(--lgray);font-size:11px;">Ⓐ has ~ / Ⓐ's ~ is …</span></td>
+          <td style="font-family:monospace; font-size:12px;">N₁[Ⓐ] は N₂[Ⓑ] が A/Na です</td>
+          <td><ruby>川口<rt>かわぐち</rt></ruby>さんは かみが <ruby>長<rt>なが</rt></ruby>いです。<br><span style="color:var(--lgray);font-size:11px;">Kawaguchi-san has long hair.</span></td>
+        </tr>
+        <tr>
+          <td>Ⓐは〜が、Ⓑは…<br><span style="color:var(--lgray);font-size:11px;">Ⓐ ~, but Ⓑ …</span></td>
+          <td style="font-family:monospace; font-size:12px;">N₁[Ⓐ] は [ていねい<ruby>形<rt>けい</rt></ruby>] が、N₂[Ⓑ] は [ていねい<ruby>形<rt>けい</rt></ruby>]</td>
+          <td>おちゃは <ruby>飲<rt>の</rt></ruby>みますが、コーヒーは <ruby>飲<rt>の</rt></ruby>みません。<br><span style="color:var(--lgray);font-size:11px;">I drink tea, but I don't drink coffee.</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note" style="margin-top:16px;">
+      <div class="note-label">📝 Note — Key points for Lesson 13 <ruby>重要<rt>じゅうよう</rt></ruby>ポイント</div>
+      <ul>
+        <li>より always goes <strong>after Ⓑ</strong> (the thing you compare against), before the adjective.
+          <div class="ja">→「より」は<ruby>必<rt>かなら</rt></ruby>ずⒷの<ruby>後<rt>あと</rt></ruby>、<ruby>形容詞<rt>けいようし</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>につける。(より goes after Ⓑ, before the adjective.)</div>
+        </li>
+        <li>Use <strong>どちら</strong> for two choices; use <strong>いちばん</strong> for three or more.
+          <div class="ja">→ <ruby>二<rt>ふた</rt></ruby>つのときは「どちら」、<ruby>三<rt>みっ</rt></ruby>つ<ruby>以上<rt>いじょう</rt></ruby>のときは「いちばん」。(どちら = 2 choices; いちばん = 3+ choices.)</div>
+        </li>
+        <li>In「ⒶはⒷが〜」, は marks the topic (Ⓐ) and が marks the <strong>feature</strong> (Ⓑ, a part of Ⓐ).
+          <div class="ja">→「ⒶはⒷが〜」では、は＝<ruby>話題<rt>わだい</rt></ruby>（Ⓐ）、が＝<ruby>特徴<rt>とくちょう</rt></ruby>（Ⓑ）。(は = topic; が = feature.)</div>
+        </li>
+        <li>In「Ⓐは〜が、Ⓑは…」, the が connects two sentences and means "but" (<ruby>逆接<rt>ぎゃくせつ</rt></ruby>).
+          <div class="ja">→「Ⓐは〜が、Ⓑは…」の「が」は<ruby>逆接<rt>ぎゃくせつ</rt></ruby>（"but"）。<ruby>特徴<rt>とくちょう</rt></ruby>の「が」（④）とは<ruby>別<rt>べつ</rt></ruby>。(This が = "but"; different from the feature が.)</div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /.page -->
+</body>
+</html>
